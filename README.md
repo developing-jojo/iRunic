@@ -1,3 +1,4 @@
 # iRunic
 
-> @Jannis schreib mal was die App so können soll
+iRunic ist die neuste FitnessApp, die das kann, was alle anderen nicht können (aber dafür auch nichts anderes): Dir eine Geschwindigkeit vorgeben.
+Die meisten Laufapps können dir lediglich sagen, wie schnell du momentan läufst, aber geben keinerlei Hilfestellung, wenn es darum geht deine Geschwindigkeit konstant zu halten. iRunic gibt dir die Möglichkeit Dein Trainingstempo einzustellen und gibt dir dann einen Takt vor, wie schnell du laufen musst. Es zeigt Dir jederzeit die voraussichtliche Geschwindigkeit für den derzeitigen Kilometer an, sowie ob du unter oder über Deinem Ziel bist. Hierbei bedient sich iRunic sowohl dem Schrittzähler von Ionic, als auch GPS um deine Schrittlänge, Schrittfrequenz, die Strecke, die Anzahl deiner Schritte und somit die Geschwindigkeit zu errechnen, die Du für den jeweiligen KM brauchen wirst. Bei Bedarf wird ein akustisches Signal ausgesendet, wann immer Dein Fuß den Boden berühren muss, damit du genau Dein Ziel erreichen kannst.
