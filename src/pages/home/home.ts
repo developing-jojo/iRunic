@@ -1,6 +1,9 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {Geolocation} from "@ionic-native/geolocation";
+import { Component } from '@angular/core';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Pedometer } from '@ionic-native/pedometer/ngx';
+import { NavController } from 'ionic-angular';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'page-home',
@@ -8,23 +11,29 @@ import {Geolocation} from "@ionic-native/geolocation";
 })
 export class HomePage {
 
-  locationWatchStarted:boolean;
-  locationSubscription:any;
-
-  locationTraces = [];
+  subscription: Subscription = new Subscription();
 
   constructor(public navCtrl: NavController,
-              private geolocation: Geolocation) {
+              private geolocation: Geolocation,
+              private pedometer: Pedometer) {
 
   }
 
   getCoordinates() {
-    this.geolocation.getCurrentPosition().then((resp) => {
-      console.log(resp.coords.latitude);
-      console.log(resp.coords.longitude);
-    }).catch((error) => {
-      console.log('Error getting location', error);
-    });
+    console.log("Subscribed");
+    this.subscription = this.geolocation.watchPosition().subscribe(value => console.log(value));
   }
 
+  stopGettingCoords() {
+    console.log("Unsubscribed");
+    this.subscription.unsubscribe();
+  }
+
+  doSomePedometer() {
+    console.log("Subscribed");
+    this.pedometer.startPedometerUpdates()
+      .subscribe(
+        value => console.log(value)
+      );
+  }
 }
