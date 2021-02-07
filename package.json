@@ -11,7 +11,7 @@
     "start:android": "ionic-app-scripts build --target cordova --platform android",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
-    "build:apk": "cordova.cmd build android --release",
+    "build:apk": "cordova.cmd build android",
     "lint": "ionic-app-scripts lint"
   },
   "dependencies": {

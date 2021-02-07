@@ -10,6 +10,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MyApp } from './app.component';
+import { ComponentsModule } from "../components/components.module";
 
 
 @NgModule({
@@ -18,11 +19,12 @@ import { MyApp } from './app.component';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
