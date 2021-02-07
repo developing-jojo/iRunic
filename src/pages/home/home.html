@@ -5,5 +5,12 @@
 </ion-header>
 
 <ion-content padding>
-  <button (click)="getCoordinates()">test</button>
+  <div>
+    <button (click)="getCoordinates()">Start Geo</button>
+    <button (click)="stopGettingCoords()">Stop</button>
+  </div>
+
+  <div>
+    <button (click)="doSomePedometer()">Start Pedo</button>
+  </div>
 </ion-content>
