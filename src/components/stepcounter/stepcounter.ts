@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Pedometer } from "@ionic-native/pedometer/ngx";
-import { Subscription } from "rxjs";
+import {Stepcounter} from "@ionic-native/stepcounter/ngx";
+
 
 @Component({
   selector: 'stepcounter',
@@ -10,25 +10,32 @@ export class StepcounterComponent implements OnInit, OnDestroy {
 
   @Input() steps: number;
 
-  sub: Subscription;
+  success : any;
+  failure : any;
 
-  constructor(private pedometer: Pedometer) {
+  constructor(private stepcounter: Stepcounter) {
   }
 
   startStepcount() {
-    this.sub = this.pedometer.startPedometerUpdates()
-        .subscribe(value => {
-          this.steps = value.distance
-            }
-        );
+    this.stepcounter.start(0).then(onSuccess => console.log('stepcounter-start success', onSuccess), onFailure => console.log('stepcounter-start error', onFailure));
+    //this.stepcounter.getStepCount();
+  }
 
-    console.log("subscribed")
+  stopStepcount(){
+    this.stepcounter.stop().then(onSuccess => alert('Stop Success ' + onSuccess), onFailure => alert('Stop Fail ' + onFailure));
+  }
+
+  getStepcount(){
+    this.stepcounter.getStepCount().then(onSuccess => console.log('success ', onSuccess), onFailure => console.log('error ', onFailure));
+  }
+
+  canCount(){
+    this.stepcounter.deviceCanCountSteps().then(onSuccess => alert('Can Count ' + onSuccess), onFailure => alert('Cant Count ' + onFailure));
   }
 
   ngOnInit(): void {
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
   }
 }

@@ -4,6 +4,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Pedometer } from '@ionic-native/pedometer/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Stepcounter } from '@ionic-native/stepcounter/ngx';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -39,6 +40,7 @@ import { ComponentsModule } from "../components/components.module";
     Pedometer,
     StatusBar,
     SplashScreen,
+    Stepcounter,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

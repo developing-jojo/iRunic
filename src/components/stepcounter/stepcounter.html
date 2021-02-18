@@ -1,5 +1,8 @@
 <!-- Generated template for the StepcounterComponent component -->
 <div>
-  <button (click)="startStepcount()">start</button>
+  <button ion-button color="primary" (click)="startStepcount()">Start</button>
+  <button ion-button color="danger" (click)="stopStepcount()">Stop</button>
+  <button ion-button color="secondary" (click)="getStepcount()">Steppis</button>
+  <button ion-button color="secondary" (click)="canCount()">CanCount</button>
   <p>Steps: {{ steps }} </p>
 </div>
