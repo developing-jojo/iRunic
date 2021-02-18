@@ -17,7 +17,7 @@ export class StepcounterComponent implements OnInit, OnDestroy {
   }
 
   startStepcount() {
-    this.stepcounter.start(0).then(onSuccess => console.log('stepcounter-start success', onSuccess), onFailure => console.log('stepcounter-start error', onFailure));
+    this.stepcounter.start(0).then(onSuccess => alert('Start Success ' + onSuccess), onFailure => alert('Start Fail ' + onFailure));
     //this.stepcounter.getStepCount();
   }
 
@@ -26,7 +26,7 @@ export class StepcounterComponent implements OnInit, OnDestroy {
   }
 
   getStepcount(){
-    this.stepcounter.getStepCount().then(onSuccess => console.log('success ', onSuccess), onFailure => console.log('error ', onFailure));
+    this.stepcounter.getStepCount().then(onSuccess => alert('Get Success ' + onSuccess), onFailure => alert('Get Fail ' + onFailure));
   }
 
   canCount(){
