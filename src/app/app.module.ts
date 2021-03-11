@@ -1,7 +1,8 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { Pedometer } from '@ionic-native/pedometer/ngx';
+import { Health } from "@ionic-native/health/ngx";
+import { HealthKit } from "@ionic-native/health-kit/ngx"
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -36,9 +37,10 @@ import { ComponentsModule } from "../components/components.module";
   ],
   providers: [
     Geolocation,
-    Pedometer,
-    StatusBar,
+    Health,
+    HealthKit,
     SplashScreen,
+    StatusBar,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
