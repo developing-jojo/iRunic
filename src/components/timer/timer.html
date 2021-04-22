@@ -1,0 +1,17 @@
+<div class="content-wrapper">
+
+  <button ion-button
+          round
+          [style.background-color]="color"
+          class="start-button" (click)="runStartStop()">
+    <img src="../../assets/icon/arrow_up.svg" alt="down" class="start-button__up" *ngIf="arrows">
+
+    <span class="start-button__text" *ngIf="isntStarted">START</span>
+    <span text-center *ngIf="timer">
+      {{time}}
+    </span>
+
+    <img src="../../assets/icon/arrow_down.svg" alt="up" class="start-button__down" *ngIf="arrows">
+  </button>
+
+</div>

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Tolerance in seconds: {{ pickedTolerance }}</ion-label>
+      <ion-range min="0"
+                 max="60"
+                 pin="true"
+                 [(ngModel)]="start"
+                 color="primary"
+                 (ionChange)="rangeChanged($event)">
+        <span range-left>{{ min }}</span>
+        <span range-right>{{ max }}</span>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+</ion-content>
