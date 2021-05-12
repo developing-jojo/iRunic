@@ -8,7 +8,7 @@ import { Health } from "@ionic-native/health/ngx";
 })
 export class StepcounterComponent implements OnInit, OnDestroy {
 
-  @Input() steps: number;
+  @Input() steps: any;
 
   sub: Subscription;
 
@@ -17,9 +17,9 @@ export class StepcounterComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.health.isAvailable().then(r => {
-      console.log(r);
+      this.steps = r.valueOf();
     }, reason => {
-      console.log(reason)
+      this.steps = reason.valueOf();
     });
 
   }
