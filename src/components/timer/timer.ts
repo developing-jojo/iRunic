@@ -21,13 +21,13 @@ export class TimerComponent implements OnInit, OnDestroy{
     this.isntStarted = true;
     }
 
-  public timeBegan = null
-  public timeStopped:any = null
-  public stoppedDuration:any = 0
-  public started = null
-  public running = false
-  public blankTime = "00:00.000"
-  public time = "00:00.000"
+  public timeBegan = null;
+  public timeStopped:any = null;
+  public stoppedDuration:any = 0;
+  public started = null;
+  public running = false;
+  public blankTime = "00:00.000";
+  public time = "00:00.000";
 
   public runStartStop() {
     this.arrows = !this.arrows;
@@ -52,7 +52,7 @@ export class TimerComponent implements OnInit, OnDestroy{
       this.timeBegan = new Date();
     }
     if (this.timeStopped !== null) {
-      let newStoppedDuration:any = (+new Date() - this.timeStopped)
+      let newStoppedDuration:any = (+new Date() - this.timeStopped);
       this.stoppedDuration = this.stoppedDuration + newStoppedDuration;
     }
     this.started = setInterval(this.clockRunning.bind(this), 10);
@@ -79,10 +79,10 @@ export class TimerComponent implements OnInit, OnDestroy{
     return (zero + num).slice(-digit);
   }
   clockRunning(){
-    let currentTime:any = new Date()
-    let timeElapsed:any = new Date(currentTime - this.timeBegan - this.stoppedDuration)
-    let min = timeElapsed.getUTCMinutes()
-    let sec = timeElapsed.getUTCSeconds()
+    let currentTime:any = new Date();
+    let timeElapsed:any = new Date(currentTime - this.timeBegan - this.stoppedDuration);
+    let min = timeElapsed.getUTCMinutes();
+    let sec = timeElapsed.getUTCSeconds();
     let ms = timeElapsed.getUTCMilliseconds();
     this.time =
       this.zeroPrefix(min, 2) + ":" +
