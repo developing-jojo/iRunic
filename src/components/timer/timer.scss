@@ -1,0 +1,38 @@
+
+.content-wrapper {
+  text-align: center;
+}
+
+ion-icon {
+  font-size: 50px;
+}
+
+.start-button {
+  font-size: 38pt;
+  font-weight: 700;
+  height: 50vh;
+  width: 50vh;
+  border-radius: 50%;
+  margin-top: 13vh;
+
+  &__up {
+    position: absolute;
+    top: 2vh;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    height: 100px;
+  }
+
+  &__down {
+    position: absolute;
+    margin-top: 15vh;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    height: 100px;
+  }
+
+  &__text {
+    position: absolute;
+
+  }
+}
